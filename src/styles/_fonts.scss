@@ -1,0 +1,26 @@
+@font-face {
+  font-family: avenirRegular;
+  src: url("../fonts/avenirNextRegular.otf");
+}
+
+@font-face {
+  font-family: avenirBold;
+  src: url("../fonts//avenirNextBold.otf");
+}
+
+$avenirRegular: avenirRegular;
+$avenirBold: avenirBold;
+
+$boldWeight: 900;
+$boldSize: 40px;
+$boldLineHeight: 55px;
+
+$mediumWeight: 600;
+$mediumSize: 14px;
+
+$regularWeight: 100;
+$regularSize: 20px;
+$regularLineHeight: 27px;
+
+$smallWeight: 400;
+$smallSize: 12px;
