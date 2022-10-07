@@ -20,6 +20,14 @@
     p {
       margin: 0px 5px;
     }
+
+    .arrow {
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .arrow:hover {
+      background-color: #f7f4f4;
+    }
   }
 
   .dashboard {
@@ -29,7 +37,7 @@
     margin: 0;
     margin-left: 15px;
     margin-top: 10px;
-    opacity: 0.5;
+    opacity: 0.6;
 
     p {
       margin: 0px 5px;
@@ -52,8 +60,10 @@
       margin-top: 5px;
       padding: 8px 0px 8px 15px;
 
-      p {
+      .link {
         margin-left: 10px;
+        text-decoration: none;
+        color: $primary;
       }
 
       &:active {
@@ -65,19 +75,34 @@
       }
     }
   }
-}
 
-.sidebar:active::-webkit-scrollbar-thumb,
-.sidebar:focus::-webkit-scrollbar-thumb,
-.sidebar:hover::-webkit-scrollbar-thumb {
-  visibility: visible;
-}
-.sidebar::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  visibility: hidden;
-}
+  .logout {
+    display: flex;
+    align-items: center;
+    padding: 20px 2px 2px 5px;
+    margin: 0;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top: 2px solid #e6e3e3;
 
-.sidebar::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+    p {
+      margin: 0px 5px;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb,
+  &:focus::-webkit-scrollbar-thumb,
+  &:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    visibility: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
 }

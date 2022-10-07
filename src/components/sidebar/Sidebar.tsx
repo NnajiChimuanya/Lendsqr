@@ -10,7 +10,7 @@ const sidebarData: ISidebarData[] = [
     sub: [
       {
         name: "Users",
-        path: "/users",
+        path: "/",
         Icon: Dashboard,
       },
       {
@@ -128,7 +128,7 @@ const Sidebar: React.FC = () => {
       <div className="switch-organization">
         <Dashboard />
         <p className="main-item-name"> Switch Organization</p>
-        <ArrowDropDown />
+        <ArrowDropDown className="arrow" />
       </div>
 
       <div className="dashboard">
@@ -149,6 +149,11 @@ const Sidebar: React.FC = () => {
           </div>
         );
       })}
+
+      <div className="logout">
+        <Dashboard />
+        <p className="main-item-name"> Logout</p>
+      </div>
     </div>
   );
 };
