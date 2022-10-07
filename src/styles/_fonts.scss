@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+
 @font-face {
   font-family: avenirRegular;
   src: url("../fonts/avenirNextRegular.otf");
@@ -8,8 +10,10 @@
   src: url("../fonts//avenirNextBold.otf");
 }
 
+// FONT FAMILIES
 $avenirRegular: avenirRegular;
 $avenirBold: avenirBold;
+$workSans: "Work Sans", sans-serif;
 
 $boldWeight: 900;
 $boldSize: 40px;
