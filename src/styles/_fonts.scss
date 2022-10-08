@@ -10,10 +10,16 @@
   src: url("../fonts//avenirNextBold.otf");
 }
 
+@font-face {
+  font-family: sfCompact;
+  src: url("../fonts/sfCompact.ttf");
+}
+
 // FONT FAMILIES
 $avenirRegular: avenirRegular;
 $avenirBold: avenirBold;
 $workSans: "Work Sans", sans-serif;
+$sfCompact: sfCompact;
 
 $boldWeight: 900;
 $boldSize: 40px;

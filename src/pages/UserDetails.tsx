@@ -54,7 +54,7 @@ const UserDetails: React.FC = () => {
             <p>Back to Users</p>
           </div>
 
-          <div className="header">
+          <div className="header-user">
             <div className="title">
               <h4>User Details</h4>
             </div>
@@ -155,8 +155,128 @@ const UserDetails: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="education">d</div>
-            <div className="socials"></div>
+
+            <hr />
+
+            <div className="education">
+              <h4>Education and Employment</h4>
+              <div className="details">
+                <div>
+                  <p>level of Education</p>
+                  <h4>B.Sc</h4>
+                </div>
+
+                <div>
+                  <p>Employment status</p>
+                  <h4>Employed</h4>
+                </div>
+
+                <div>
+                  <p>Sector of Employment</p>
+                  <h4>FinTech</h4>
+                </div>
+
+                <div>
+                  <p>Duration of Employment</p>
+                  <h4>2 years</h4>
+                </div>
+
+                <div>
+                  <p>Office Email</p>
+                  <h4>grace@lendsqr.com</h4>
+                </div>
+
+                <div>
+                  <p>Monthly income</p>
+                  <h4>₦200,000.00- ₦400,000.00</h4>
+                </div>
+
+                <div>
+                  <p> Children</p>
+                  <h4>None</h4>
+                </div>
+
+                <div>
+                  <p>loan repayment</p>
+                  <h4>40,000</h4>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+
+            <div className="socials">
+              <h4>Socials</h4>
+              <div className="details">
+                <div>
+                  <p>Twitter</p>
+                  <h4>@graceEffion</h4>
+                </div>
+
+                <div>
+                  <p>Facebook</p>
+                  <h4>Grace Effiom</h4>
+                </div>
+
+                <div>
+                  <p>Instagram</p>
+                  <h4>@graceEffion</h4>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+
+            <div className="guarantor">
+              <h4>Guarantor</h4>
+              <div className="details">
+                <div>
+                  <p>Full name</p>
+                  <h4>Debby Ogana</h4>
+                </div>
+
+                <div>
+                  <p>phone number</p>
+                  <h4>07060780922</h4>
+                </div>
+
+                <div>
+                  <p>Email address</p>
+                  <h4>debby@gmail.com</h4>
+                </div>
+
+                <div>
+                  <p>Relationship</p>
+                  <h4>Sister</h4>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+
+            <div className="user-overall">
+              <div className="details">
+                <div>
+                  <p>Full name</p>
+                  <h4>Debby Ogana</h4>
+                </div>
+
+                <div>
+                  <p>phone number</p>
+                  <h4>07060780922</h4>
+                </div>
+
+                <div>
+                  <p>Email address</p>
+                  <h4>debby@gmail.com</h4>
+                </div>
+
+                <div>
+                  <p>Relationship</p>
+                  <h4>Sister</h4>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
