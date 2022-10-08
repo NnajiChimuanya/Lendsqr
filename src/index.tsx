@@ -17,7 +17,13 @@ root.render(
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/userDetails" element={<UserDetails />}></Route>
+        <Route path="/userDetails" element={<UserDetails />}>
+          <Route path="userDetails/documents" element={<UserDetails />} />
+          <Route path="userDetails/bankDetails" element={<UserDetails />} />
+          <Route path="userDetails/loans" element={<UserDetails />} />
+          <Route path="userDetails/savings" element={<UserDetails />} />
+          <Route path="userDetails/appAndSystem " element={<UserDetails />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

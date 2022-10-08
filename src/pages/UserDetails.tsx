@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/userDetails.scss";
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
-import { KeyboardBackspace } from "@mui/icons-material";
+import { KeyboardBackspace, Star } from "@mui/icons-material";
 import { Button, Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -42,25 +42,46 @@ const UserDetails = () => {
 
               <div className="user-tier">
                 <p>User's tier</p>
+                <Star />
               </div>
 
               <div className="user-balance">
-                <p>User's tier</p>
+                <h2>N 200,000.00</h2>
+                <p>9912345678/Providus Bank</p>
               </div>
             </div>
-            {/* <div className="up">
-              <div className="user-details">
-                <Avatar />
-                <div className="name">
-                  <h5>Grace Effiom</h5>
-                  <p>LSQFf587g90</p>
-                </div>
+
+            <div className="down">
+              <div className="link-container active">
+                <Link className="link " to="userDetails/documents">
+                  Documents
+                </Link>
               </div>
 
-              <div className="user-tier">
-                <p>User's tier</p>
+              <div className="link-container">
+                <Link className="link" to="userDetails/bankDetails">
+                  Bank Details
+                </Link>
               </div>
-            </div> */}
+
+              <div className="link-container">
+                <Link className="link" to="userDetails/loans">
+                  Loans
+                </Link>
+              </div>
+
+              <div className="link-container">
+                <Link className="link" to="userDetails/savings">
+                  Savings
+                </Link>
+              </div>
+
+              <div className="link-container">
+                <Link className="link" to="userDeails/appAndSystem">
+                  App and System
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
