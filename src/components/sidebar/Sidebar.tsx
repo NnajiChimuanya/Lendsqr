@@ -139,12 +139,12 @@ const Sidebar: React.FC = () => {
       {sidebarData?.map((item, id) => {
         let { sub } = item;
         return (
-          <div className="main-item">
+          <div key={id} className="main-item">
             <p className="main-item-name"> {item.name}</p>
 
             {sub?.map((subMenuItem, id) => {
               let { name, path, Icon } = subMenuItem;
-              return <SubMenu name={name} path={path} Icon={Icon} />;
+              return <SubMenu key={id} name={name} path={path} Icon={Icon} />;
             })}
           </div>
         );

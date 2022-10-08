@@ -1,15 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/userDetails.scss";
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
 import { KeyboardBackspace, Star } from "@mui/icons-material";
 import { Button, Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
+import IUserDetailsRoutes from "../interfaces/userDetailsRoutes";
 
-const UserDetails = () => {
+const userDetailsRoutes: IUserDetailsRoutes[] = [
+  {
+    name: "Documents",
+    path: "userDetails/documents",
+  },
+
+  {
+    name: "Bank Details",
+    path: "userDetails/bankDetails",
+  },
+
+  {
+    name: "Loan",
+    path: "userDetails/loans",
+  },
+
+  {
+    name: "Savings",
+    path: "userDetails/savings",
+  },
+  {
+    name: "App and System",
+    path: "userDeails/appAndSystem",
+  },
+];
+
+const UserDetails: React.FC = () => {
+  const [active, setActive] = useState<React.SetStateAction<number>>(0);
+
+  const handleLinkClick = (id: number) => {
+    setActive(id);
+  };
+
   return (
     <div className="userDetails-page">
       <Header />
+
       <div className="main">
         <Sidebar />
         <div className="user-details">
@@ -52,35 +86,27 @@ const UserDetails = () => {
             </div>
 
             <div className="down">
-              <div className="link-container active">
-                <Link className="link " to="userDetails/documents">
-                  Documents
-                </Link>
-              </div>
-
-              <div className="link-container">
-                <Link className="link" to="userDetails/bankDetails">
-                  Bank Details
-                </Link>
-              </div>
-
-              <div className="link-container">
-                <Link className="link" to="userDetails/loans">
-                  Loans
-                </Link>
-              </div>
-
-              <div className="link-container">
-                <Link className="link" to="userDetails/savings">
-                  Savings
-                </Link>
-              </div>
-
-              <div className="link-container">
-                <Link className="link" to="userDeails/appAndSystem">
-                  App and System
-                </Link>
-              </div>
+              {userDetailsRoutes.map((item, id) => {
+                let { name, path } = item;
+                return (
+                  <div
+                    key={id}
+                    className={`link-container ${
+                      id === active ? `active` : null
+                    }`}
+                  >
+                    <Link
+                      onClick={(e: React.MouseEvent<HTMLElement>) => {
+                        handleLinkClick(id);
+                      }}
+                      className="link"
+                      to={path}
+                    >
+                      {name}
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
