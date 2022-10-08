@@ -109,6 +109,55 @@ const UserDetails: React.FC = () => {
               })}
             </div>
           </div>
+
+          <div className="section-2">
+            <div className="personal-details">
+              <h4>Personal Details</h4>
+              <div className="details">
+                <div>
+                  <p>FULL NAME</p>
+                  <h4>Grace Effiom</h4>
+                </div>
+
+                <div>
+                  <p>Phone number</p>
+                  <h4>0706789878</h4>
+                </div>
+
+                <div>
+                  <p>Email Address</p>
+                  <h4>grace@gmail.com</h4>
+                </div>
+
+                <div>
+                  <p>Bvn</p>
+                  <h4>123456789</h4>
+                </div>
+
+                <div>
+                  <p>Gender</p>
+                  <h4>Female</h4>
+                </div>
+
+                <div>
+                  <p>Marital status</p>
+                  <h4>Single</h4>
+                </div>
+
+                <div>
+                  <p> Children</p>
+                  <h4>None</h4>
+                </div>
+
+                <div>
+                  <p>Type of residence</p>
+                  <h4>Parent's Apartment</h4>
+                </div>
+              </div>
+            </div>
+            <div className="education">d</div>
+            <div className="socials"></div>
+          </div>
         </div>
       </div>
     </div>

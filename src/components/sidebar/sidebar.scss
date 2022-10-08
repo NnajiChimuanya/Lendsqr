@@ -66,13 +66,14 @@
         color: $primary;
       }
 
-      &:active {
-        background: rgba(57, 205, 204, 0.1);
-      }
-
       &:hover {
         background: rgba(57, 205, 204, 0.06);
       }
+    }
+
+    .active {
+      background: rgba(57, 205, 204, 0.1);
+      border-left: 5px solid $blue;
     }
   }
 

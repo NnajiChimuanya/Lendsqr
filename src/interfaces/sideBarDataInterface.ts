@@ -5,6 +5,7 @@ import { ReactElement } from "react";
 export interface ISub {
   name: string;
   path: string;
+  menuId: string;
   Icon: SvgIconComponent;
 }
 
