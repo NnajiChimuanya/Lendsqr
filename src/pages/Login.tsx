@@ -12,7 +12,6 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  console.log(email, password);
   return (
     <div className="login">
       <div className="left">
@@ -24,7 +23,7 @@ const Login = () => {
         </div>
       </div>
       <div className="right">
-        <div className="header">
+        <div className="header-login">
           <h2>Welcome!</h2>
           <p>Enter details to login.</p>
         </div>

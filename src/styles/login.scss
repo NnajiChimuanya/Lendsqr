@@ -3,13 +3,8 @@
 @import "./mixins";
 
 .login {
-  display: flex;
-
   .left {
-    flex: 0.5;
-    padding: 100px 50px;
-    row-gap: 80px;
-    height: 100vh;
+    display: none;
 
     .logo-container {
       .logo {
@@ -27,18 +22,31 @@
         height: 337.57px;
       }
     }
+
+    @media screen and (min-width: 900px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 0.5;
+    }
   }
 
   .right {
-    flex: 0.5;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     row-gap: 60px;
     padding: 180px 80px;
     height: 100vh;
 
-    .header {
+    @media screen and (min-width: 900px) {
+      flex: 0.5;
+    }
+
+    .header-login {
       line-height: 0.5;
+
       h2 {
         font: {
           family: $avenirBold;
@@ -61,8 +69,12 @@
     }
 
     .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       .email {
-        width: 467px;
+        width: 73vw;
         height: 50px;
         padding: 0px 8px;
         margin-bottom: 15px;
@@ -70,6 +82,14 @@
         border-radius: 5px;
         outline-width: 0px;
         box-sizing: border-box;
+
+        @media screen and (min-width: 600px) {
+          width: 60vw;
+        }
+
+        @media screen and (min-width: 900px) {
+          width: 465px;
+        }
       }
 
       .email::placeholder {
@@ -79,7 +99,7 @@
       }
 
       .password-container {
-        width: 447px;
+        width: 70vw;
         height: 50px;
         padding: 0px 8px;
         margin-bottom: 15px;
@@ -87,6 +107,14 @@
         border-radius: 5px;
         box-sizing: content-box;
         @include flex-center;
+
+        @media screen and (min-width: 600px) {
+          width: 58vw;
+        }
+
+        @media screen and (min-width: 900px) {
+          width: 455px;
+        }
 
         .password {
           width: 100%;
@@ -138,13 +166,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 467px;
+        width: 70vw;
         height: 50px;
         color: #fff;
         background: $blue;
         border: 0px;
         border-radius: 5px;
+
+        @media screen and (min-width: 600px) {
+          width: 60vw;
+        }
+
+        @media screen and (min-width: 900px) {
+          width: 465px;
+        }
       }
     }
+  }
+
+  @media screen and (min-width: 900px) {
+    display: flex;
   }
 }

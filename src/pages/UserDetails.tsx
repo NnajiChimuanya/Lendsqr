@@ -29,7 +29,7 @@ const userDetailsRoutes: IUserDetailsRoutes[] = [
   },
   {
     name: "App and System",
-    path: "userDeails/appAndSystem",
+    path: "userDetails/appAndSystem",
   },
 ];
 

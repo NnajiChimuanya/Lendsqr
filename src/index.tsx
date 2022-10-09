@@ -22,7 +22,7 @@ root.render(
           <Route path="userDetails/bankDetails" element={<UserDetails />} />
           <Route path="userDetails/loans" element={<UserDetails />} />
           <Route path="userDetails/savings" element={<UserDetails />} />
-          <Route path="userDetails/appAndSystem " element={<UserDetails />} />
+          <Route path="userDetails/appAndSystem" element={<UserDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>
