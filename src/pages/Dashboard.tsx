@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/dashboard.scss";
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
 import { DashboardCustomizeOutlined, FilterList } from "@mui/icons-material";
 import ITableHeaders from "../interfaces/tableHeaders";
 import { data } from "../data";
+import IUser from "../interfaces/user";
+import _ from "lodash";
 
 const tableHeaders: ITableHeaders[] = [
   {
@@ -34,6 +36,15 @@ const tableHeaders: ITableHeaders[] = [
 ];
 
 const Dashboard = () => {
+  const pageSize = 10;
+  const pageCount = Math.ceil(data.length / pageSize);
+  const pages = _.range(1, pageCount);
+  const [paginatedPost, setPaginatedPost] = useState<IUser[]>();
+
+  useEffect(() => {
+    setPaginatedPost(_(data).slice(0).take(pageSize).value());
+  });
+
   return (
     <div className="dashboard">
       <Header />
@@ -82,7 +93,7 @@ const Dashboard = () => {
                     );
                   })}
                 </tr>
-                {data.map((item, id) => {
+                {paginatedPost?.map((item, id) => {
                   let { orgName, userName, email, phoneNumber, createdAt } =
                     item;
                   return (
@@ -97,6 +108,14 @@ const Dashboard = () => {
                   );
                 })}
               </table>
+
+              <nav>
+                <ul>
+                  {pages.map((number, id) => {
+                    return <li key={id}>{number}</li>;
+                  })}
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
