@@ -8,7 +8,7 @@
   align-items: center;
   height: 10vh;
   background-color: #fff;
-  width: 100%;
+  width: 100vw;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
 
   .logo {
@@ -51,6 +51,12 @@
         color: #fff !important;
         font-size: $regularSize !important;
       }
+    }
+
+    display: none;
+
+    @media screen and (min-width: 900px) {
+      display: flex;
     }
   }
 
@@ -103,6 +109,24 @@
           color: $primary !important;
         }
       }
+    }
+
+    display: none;
+
+    @media screen and (min-width: 900px) {
+      display: flex;
+    }
+  }
+
+  .toggle-container {
+    .toggle-icon {
+      margin-right: 35px;
+      cursor: pointer;
+      color: $primary;
+    }
+
+    @media screen and (min-width: 900px) {
+      display: none;
     }
   }
 }

@@ -7,7 +7,7 @@
   height: 90vh;
   overflow-y: scroll;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
-  font-family: $workSans;
+  font-family: $sfCompact;
   color: $primary;
 
   .switch-organization {
@@ -39,8 +39,10 @@
     margin-top: 10px;
     opacity: 0.6;
 
-    p {
+    .link {
       margin: 0px 5px;
+      text-decoration: none;
+      color: $primary;
     }
   }
 
@@ -52,6 +54,7 @@
       padding: 20px 2px 2px 5px;
       margin: 15px 15px 10px 15px;
       font-size: $smallSize;
+      font-weight: 600;
     }
 
     .subMenuItem {
@@ -105,5 +108,10 @@
   &::-webkit-scrollbar {
     width: 4px;
     height: 4px;
+  }
+  display: none;
+
+  @media screen and (min-width: 1100px) {
+    display: block;
   }
 }

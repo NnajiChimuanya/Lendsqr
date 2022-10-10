@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import "../styles/dashboard.scss";
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
-import { DashboardCustomizeOutlined, FilterList } from "@mui/icons-material";
+import {
+  DashboardCustomizeOutlined,
+  FilterList,
+  ChevronLeft,
+  ChevronRight,
+} from "@mui/icons-material";
 import ITableHeaders from "../interfaces/tableHeaders";
 import { data } from "../data";
 import IUser from "../interfaces/user";
@@ -38,12 +43,40 @@ const tableHeaders: ITableHeaders[] = [
 const Dashboard = () => {
   const pageSize = 10;
   const pageCount = Math.ceil(data.length / pageSize);
-  const pages = _.range(1, pageCount);
+  const pages = _.range(1, pageCount + 1);
   const [paginatedPost, setPaginatedPost] = useState<IUser[]>();
+  let [currentPage, setCurrentPage] = useState<number>(1);
+
+  const paginate = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    const startIndex = (pageNumber - 1) * pageSize;
+    let paginatedPost = _(data).slice(startIndex).take(pageSize).value();
+    setPaginatedPost(paginatedPost);
+  };
+
+  const paginateDecrease = (pageNum: number) => {
+    if (pageNum > 1) {
+      pageNum--;
+      setCurrentPage(pageNum);
+      const startIndex = (pageNum - 1) * pageSize;
+      let paginatedPost = _(data).slice(startIndex).take(pageSize).value();
+      setPaginatedPost(paginatedPost);
+    }
+  };
+
+  const paginateIncrease = (pageNum: number) => {
+    if (pageNum < pageCount) {
+      pageNum++;
+      setCurrentPage(pageNum);
+      const startIndex = (pageNum - 1) * pageSize;
+      let paginatedPost = _(data).slice(startIndex).take(pageSize).value();
+      setPaginatedPost(paginatedPost);
+    }
+  };
 
   useEffect(() => {
     setPaginatedPost(_(data).slice(0).take(pageSize).value());
-  });
+  }, []);
 
   return (
     <div className="dashboard">
@@ -111,9 +144,33 @@ const Dashboard = () => {
 
               <nav>
                 <ul>
+                  <ChevronLeft
+                    className="chevron"
+                    onClick={(e) => {
+                      paginateDecrease(currentPage);
+                    }}
+                  />
                   {pages.map((number, id) => {
-                    return <li key={id}>{number}</li>;
+                    return (
+                      <li
+                        className={`${
+                          number === currentPage ? "active" : null
+                        }`}
+                        onClick={(e: React.MouseEvent<HTMLElement>) => {
+                          paginate(number);
+                        }}
+                        key={id}
+                      >
+                        {number}
+                      </li>
+                    );
                   })}
+                  <ChevronRight
+                    className="chevron"
+                    onClick={(e) => {
+                      paginateIncrease(currentPage);
+                    }}
+                  />
                 </ul>
               </nav>
             </div>

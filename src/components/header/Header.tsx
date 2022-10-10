@@ -4,6 +4,7 @@ import {
   SearchOutlined,
   NotificationsOutlined,
   ArrowDropDown,
+  DensityMedium,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Avatar } from "@mui/material";
@@ -44,6 +45,9 @@ const Header = () => {
             <ArrowDropDown className="dropdown-icon" />
           </div>
         </div>
+      </div>
+      <div className="toggle-container">
+        <DensityMedium className="toggle-icon" />
       </div>
     </div>
   );

@@ -3,6 +3,30 @@ import "./sidebar.scss";
 import { ArrowDropDown, Dashboard } from "@mui/icons-material";
 import SubMenu from "./SubMenu";
 import ISidebarData from "../../interfaces/sideBarDataInterface";
+// import { ReactComponent as badgePercent } from "../../svgs/badge-percent.svg";
+import {
+  badgePercent,
+  Briefcase,
+  chartBar,
+  clipboardList,
+  coinsSolid,
+  galaxy,
+  group1,
+  group104,
+  Home,
+  icon,
+  piggyBank,
+  sack,
+  scroll,
+  slider,
+  userFriends,
+  userTime,
+  userCheck,
+  userCog,
+  users,
+  Signout,
+} from "../../svgs";
+import { Link } from "react-router-dom";
 
 const sidebarData: ISidebarData[] = [
   {
@@ -12,49 +36,49 @@ const sidebarData: ISidebarData[] = [
         name: "Users",
         path: "/",
         menuId: "8767",
-        Icon: Dashboard,
+        Icon: userFriends,
       },
       {
         name: "Guarantors",
         path: "/",
         menuId: "876d7",
-        Icon: Dashboard,
+        Icon: users,
       },
       {
         name: "Loans",
         path: "/",
         menuId: "8r67",
-        Icon: Dashboard,
+        Icon: sack,
       },
       {
         name: "Decision Models",
         path: "/",
         menuId: "67",
-        Icon: Dashboard,
+        Icon: badgePercent,
       },
       {
         name: "Savings",
         path: "/",
         menuId: "8667",
-        Icon: Dashboard,
+        Icon: piggyBank,
       },
       {
         name: "Loan Requests",
         path: "/",
         menuId: "8737",
-        Icon: Dashboard,
+        Icon: group104,
       },
       {
         name: "Whitelist",
         path: "/",
         menuId: "1767",
-        Icon: Dashboard,
+        Icon: userCheck,
       },
       {
         name: "Karma",
         path: "/",
         menuId: "8067",
-        Icon: Dashboard,
+        Icon: userTime,
       },
     ],
   },
@@ -65,55 +89,55 @@ const sidebarData: ISidebarData[] = [
         name: "Organization",
         path: "/",
         menuId: "8gg7",
-        Icon: Dashboard,
+        Icon: Briefcase,
       },
       {
         name: "Loan Products",
         path: "/",
         menuId: "ii67",
-        Icon: Dashboard,
+        Icon: group104,
       },
       {
         name: "Savings Product",
         path: "/",
         menuId: "2767",
-        Icon: Dashboard,
+        Icon: group1,
       },
       {
         name: "Fees and Charges",
         path: "/",
         menuId: "5067",
-        Icon: Dashboard,
+        Icon: coinsSolid,
       },
       {
         name: "Transactions",
         path: "/",
         menuId: "8760",
-        Icon: Dashboard,
+        Icon: icon,
       },
       {
         name: "Services",
         path: "/",
         menuId: "gh7",
-        Icon: Dashboard,
+        Icon: galaxy,
       },
       {
         name: "Service Account",
         path: "/",
         menuId: "87tt",
-        Icon: Dashboard,
+        Icon: userCog,
       },
       {
         name: "Settlements",
         path: "/",
         menuId: "we67",
-        Icon: Dashboard,
+        Icon: scroll,
       },
       {
         name: "Reports",
         path: "/",
         menuId: "df67",
-        Icon: Dashboard,
+        Icon: chartBar,
       },
     ],
   },
@@ -124,19 +148,19 @@ const sidebarData: ISidebarData[] = [
         name: "Preferences",
         path: "/",
         menuId: "87ki",
-        Icon: Dashboard,
+        Icon: slider,
       },
       {
         name: "Fees and Pricing",
         path: "/",
         menuId: "8cv7",
-        Icon: Dashboard,
+        Icon: badgePercent,
       },
       {
         name: "Audit Logs",
         path: "/",
         menuId: "87vb",
-        Icon: Dashboard,
+        Icon: clipboardList,
       },
     ],
   },
@@ -150,14 +174,17 @@ const Sidebar: React.FC = () => {
   return (
     <div className="sidebar">
       <div className="switch-organization">
-        <Dashboard />
+        <Briefcase />
         <p className="main-item-name"> Switch Organization</p>
         <ArrowDropDown className="arrow" />
       </div>
 
       <div className="dashboard">
-        <Dashboard className="main-item-icon" />
-        <p className="main-item-name"> Dashboard</p>
+        <Home className="main-item-icon" />
+        <Link to={"/"} className="link">
+          {" "}
+          Dashboard
+        </Link>
       </div>
 
       {sidebarData?.map((item, id) => {
@@ -185,7 +212,7 @@ const Sidebar: React.FC = () => {
       })}
 
       <div className="logout">
-        <Dashboard />
+        <Signout />
         <p className="main-item-name"> Logout</p>
       </div>
     </div>

@@ -1,13 +1,11 @@
-import React, { useState } from "react";
-import { ISub } from "../../interfaces/sideBarDataInterface";
+import React, { SVGProps, useState } from "react";
 import { Link } from "react-router-dom";
-import { SvgIconComponent } from "@mui/icons-material";
 
 interface Props {
   name: string;
   path: string;
   menuId: string;
-  Icon: SvgIconComponent;
+  Icon: React.FC<SVGProps<SVGSVGElement> & { title?: string | undefined }>;
   active: React.SetStateAction<string>;
   handleLinkClick: (id: string) => void;
 }
