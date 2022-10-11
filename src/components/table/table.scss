@@ -2,89 +2,246 @@
 @import "../../styles//fonts";
 @import "../../styles//mixins";
 
-.main-table {
-  margin: 20px 0px 20px 20px;
+div {
+  .filter-modal {
+    width: 270px;
+    height: 550px;
+    background-color: #fff;
+    border: 2px solid rgba(84, 95, 125, 0.04);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1000;
+    top: 150px;
+    bottom: 0;
+    right: 0;
+    left: 300px;
+    padding: 5px 10px;
+    font-family: $sfCompact;
 
-  .table-header {
-    th {
-      font-size: $smallSize;
-      div {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
 
-        .filter-icon {
-          margin-left: 10px;
-        }
-      }
+    div {
+      display: flex;
+      flex-direction: column;
     }
-  }
 
-  .table-data {
-    font-size: $mediumSize;
-    td {
-      width: 16%;
+    .organization-container {
+      margin-top: 20px;
 
-      .status {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      select {
+        height: 35px;
+        border: 1px solid rgba(33, 63, 125, 0.1);
+        border-radius: 8px;
+        margin-top: 5px;
+        color: $primary;
+        outline-width: 0px;
 
-        .icon {
-          cursor: pointer;
-
-          &:hover {
-            background-color: #e5e8ee;
-            border-radius: 50%;
-          }
-        }
-      }
-
-      .modal {
-        background-color: #fff;
-        border: 2px solid rgba(84, 95, 125, 0.04);
-        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-        border-radius: 4px;
-        width: 100px;
-        z-index: 1000;
-        position: absolute;
-        top: 0;
-        bottom: 1;
-        right: 80px;
-        left: 10;
-        margin-top: 400px;
-        width: 150px;
-        height: 100px;
-        padding-top: 8px;
-        padding-left: 5px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-
-        .modal-items {
-          display: flex;
-          align-items: center;
-
-          p {
-            margin-left: 10px;
-            cursor: pointer;
-          }
-
-          .link {
-            text-decoration: none;
+        option {
+          &::placeholder {
             color: $primary;
           }
         }
       }
+    }
 
-      .hide {
-        display: none;
+    .username {
+      input {
+        height: 35px;
+        border: 1px solid rgba(33, 63, 125, 0.1);
+        border-radius: 8px;
+        margin-top: 5px;
+        outline-width: 0px;
+
+        &::placeholder {
+          color: $primary;
+        }
+      }
+    }
+
+    .email {
+      input {
+        height: 35px;
+        border: 1px solid rgba(33, 63, 125, 0.1);
+        border-radius: 8px;
+        margin-top: 5px;
+        outline-width: 0px;
+
+        &::placeholder {
+          color: $primary;
+        }
+      }
+    }
+
+    .date {
+      input {
+        height: 35px;
+        border: 1px solid rgba(33, 63, 125, 0.1);
+        border-radius: 8px;
+        margin-top: 5px;
+        outline-width: 0px;
+
+        &::placeholder {
+          color: $primary;
+        }
+      }
+    }
+
+    .number {
+      input {
+        height: 35px;
+        border: 1px solid rgba(33, 63, 125, 0.1);
+        border-radius: 8px;
+        margin-top: 5px;
+        outline-width: 0px;
+
+        &::placeholder {
+          color: $primary;
+        }
+      }
+    }
+
+    .status {
+      select {
+        height: 35px;
+        border: 1px solid rgba(33, 63, 125, 0.1);
+        border-radius: 8px;
+        margin-top: 5px;
+        outline-width: 0px;
+
+        option {
+          &::placeholder {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .buttons {
+      flex-direction: row;
+      justify-content: center;
+
+      .reset {
+        background: #ffffff;
+        border: 1px solid rgba(84, 95, 125, 0.14);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+        text-transform: inherit !important;
+        color: $primary;
+        padding: 1px 25px !important;
+        font-size: 12px;
+      }
+
+      .filter {
+        padding: 5px 25px !important;
+        border: 1px solid #39cdcc;
+        border-radius: 4px;
+        background-color: $blue;
+        text-transform: inherit !important;
+        color: #fff;
+        margin-left: 10px;
+        font-size: 12px;
       }
     }
   }
 
-  th,
-  td {
-    padding: 10px 15px;
+  .hide-filter {
+    display: none;
+  }
+
+  .main-table {
+    margin: 20px 0px 20px 20px;
+
+    .table-header {
+      th {
+        font-size: $smallSize;
+        div {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          .filter-icon {
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 18px;
+
+            &:hover {
+              background-color: #e5e8ee;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    .table-data {
+      font-size: $mediumSize;
+      td {
+        width: 16%;
+
+        .status {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .icon {
+            cursor: pointer;
+
+            &:hover {
+              background-color: #e5e8ee;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .modal {
+          background-color: #fff;
+          border: 2px solid rgba(84, 95, 125, 0.04);
+          box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+          border-radius: 4px;
+          width: 100px;
+          z-index: 1000;
+          position: absolute;
+          top: 0;
+          bottom: 1;
+          right: 80px;
+          left: 10;
+          margin-top: 400px;
+          width: 150px;
+          height: 100px;
+          padding-top: 8px;
+          padding-left: 5px;
+          display: flex;
+          flex-direction: column;
+          row-gap: 10px;
+
+          .modal-items {
+            display: flex;
+            align-items: center;
+
+            p {
+              margin-left: 10px;
+              cursor: pointer;
+            }
+
+            .link {
+              text-decoration: none;
+              color: $primary;
+            }
+          }
+        }
+
+        .hide {
+          display: none;
+        }
+      }
+    }
+
+    th,
+    td {
+      padding: 10px 15px;
+    }
   }
 }
