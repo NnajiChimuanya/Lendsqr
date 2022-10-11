@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/login.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] =
@@ -11,6 +11,8 @@ const Login = () => {
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="login">
@@ -57,7 +59,9 @@ const Login = () => {
             </Link>
           </p>
 
-          <button className="button">LOG IN</button>
+          <button onClick={() => navigate("/")} className="button">
+            LOG IN
+          </button>
         </form>
       </div>
     </div>

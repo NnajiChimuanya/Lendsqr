@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+<img src="https://www.lendsqr.com/assets/icons/header-logo.svg" alt="logo>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Lendsqr
 
-## Available Scripts
+### A Lending-as-a-Service Solution which powers lenders to build, launch, and scale their digital lending business across multiple channels, at the lowest cost.
 
-In the project directory, you can run:
+### We provide our lenders from various industries with a cloud lending platform to make the activities of your LaaS business run smoothly by implementing novel solutions and superior domain expertise. We’re passionate about making lenders succeed.
+
+### With Lendsqr, you easily automate your entire credit lifecycle with Lendsqr’s comprehensive end-to-end digital lending stack. Manage and optimize your lending process using our extensively configurable loan decisioning workflow and easily adapt your offerings for your best customers.
+
+## Major Feature :
+
+1. Karma Verification : Discover and block bad actors using data from Karma. Use common data points, such as emails, phone, BVN, and even images to discover potential borrowers or customers who have been previously flagged for fraud and other unethical behaviours.4
+
+# Folder structure
+
+    src\
+        components\       -> contains the components, their style and their test
+        fonts\            -> contains the fonts used
+        interfaces\       -> contains the interfaces
+        pages\            -> contains the different pages
+        styles\           -> contains all styles
+        svgs\             -> contains all the svg components used
+
+# Getting Started with Lendsqr app
+
+## Requirements
+
+Nodejs Version 10 or higher
+
+#
+
+## Installation
+
+### `npm install`
+
+#
+
+## To start project in development mode :
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

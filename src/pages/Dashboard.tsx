@@ -9,7 +9,7 @@ import {
   MoreVert,
 } from "@mui/icons-material";
 import ITableHeaders from "../interfaces/tableHeaders";
-import { data } from "../data";
+// import { data } from "../data";
 import IUser from "../interfaces/user";
 import _ from "lodash";
 import {
@@ -23,6 +23,7 @@ import {
 } from "../svgs";
 import { Link } from "react-router-dom";
 import Table from "../components/table/Table";
+import axios from "axios";
 
 const tableHeaders: ITableHeaders[] = [
   {
@@ -51,13 +52,31 @@ const tableHeaders: ITableHeaders[] = [
   },
 ];
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
+  const [data, setData] = useState<IUser[]>([]);
+
+  useEffect(() => {
+    axios
+      .get("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    setPaginatedPost(_(data).slice(0).take(pageSize).value());
+  }, [data]);
+
+  //Logic for pagination
   const pageSize = 10;
   const pageCount = Math.ceil(data.length / pageSize);
   const pages = _.range(1, pageCount + 1);
   const [paginatedPost, setPaginatedPost] = useState<IUser[]>();
   let [currentPage, setCurrentPage] = useState<number>(1);
 
+  //Paginate function
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
     const startIndex = (pageNumber - 1) * pageSize;
@@ -84,14 +103,6 @@ const Dashboard = () => {
       setPaginatedPost(paginatedPost);
     }
   };
-
-  useEffect(() => {
-    setPaginatedPost(_(data).slice(0).take(pageSize).value());
-  }, []);
-
-  const [hide, setHide] = useState<React.SetStateAction<boolean>>(true);
-  const [clicked, setClicked] =
-    useState<React.SetStateAction<number | undefined>>();
 
   return (
     <div className="dashboard">
