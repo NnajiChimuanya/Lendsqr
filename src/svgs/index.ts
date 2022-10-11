@@ -18,6 +18,10 @@ import { ReactComponent as userCheck } from "./userCheck.svg";
 import { ReactComponent as userCog } from "./userCog.svg";
 import { ReactComponent as users } from "./users.svg";
 import { ReactComponent as vector } from "./Vector.svg";
+import { ReactComponent as UserTotal } from "./userOverview.svg";
+import { ReactComponent as ActiveTotal } from "./activeOverview.svg";
+import { ReactComponent as LoanTotal } from "./loanOverview.svg";
+import { ReactComponent as SavingsTotal } from "./savingOverview.svg";
 import { ReactComponent as Signout } from "./sign-out 1.svg";
 
 export {
@@ -42,4 +46,8 @@ export {
   userCog,
   users,
   vector,
+  UserTotal,
+  ActiveTotal,
+  LoanTotal,
+  SavingsTotal,
 };

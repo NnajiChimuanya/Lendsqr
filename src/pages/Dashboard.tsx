@@ -12,6 +12,7 @@ import ITableHeaders from "../interfaces/tableHeaders";
 import { data } from "../data";
 import IUser from "../interfaces/user";
 import _ from "lodash";
+import { UserTotal, ActiveTotal, LoanTotal, SavingsTotal } from "../svgs";
 
 const tableHeaders: ITableHeaders[] = [
   {
@@ -91,24 +92,35 @@ const Dashboard = () => {
 
             <div className="overview-data">
               <div className="total-users">
-                <DashboardCustomizeOutlined />
+                <span>
+                  <UserTotal className="icon" />
+                </span>
                 <p>Users</p>
                 <h4>2,453</h4>
               </div>
               <div className="total-active-users">
-                <DashboardCustomizeOutlined />
-                <p>Users</p>
+                <span>
+                  {" "}
+                  <ActiveTotal className="icon" />
+                </span>
+                <p> Active Users</p>
                 <h4>2,453</h4>
               </div>
               <div className="total-users-loan">
-                <DashboardCustomizeOutlined />
-                <p>Users</p>
-                <h4>2,453</h4>
+                <span>
+                  {" "}
+                  <LoanTotal className="icon" />
+                </span>
+                <p>Users with Loans</p>
+                <h4>12,453</h4>
               </div>
               <div className="total-users-savings">
-                <DashboardCustomizeOutlined />
-                <p>Users</p>
-                <h4>2,453</h4>
+                <span>
+                  {" "}
+                  <SavingsTotal className="icon" />
+                </span>
+                <p>Users with Savings</p>
+                <h4>102,453</h4>
               </div>
             </div>
 
