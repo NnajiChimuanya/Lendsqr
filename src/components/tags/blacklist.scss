@@ -1,0 +1,13 @@
+@import "../../styles//colors";
+@import "../../styles//fonts";
+@import "../../styles//mixins";
+
+.blacklist {
+  @include flex-center;
+  width: 100px;
+  height: 30px;
+  border-radius: 100px;
+  font-family: $workSans;
+  background: rgba(228, 3, 59, 0.1);
+  color: rgba(228, 3, 59, 1);
+}

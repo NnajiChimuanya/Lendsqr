@@ -6,6 +6,10 @@ import { Eye, UserTime, UserCheck } from "../../svgs";
 import ITableHeaders from "../../interfaces/tableHeaders";
 import IUser from "../../interfaces/user";
 import { Button } from "@mui/material";
+import Active from "../tags/Active";
+import Inactive from "../tags/Inactive";
+import Blacklist from "../tags/Blacklist";
+import Pending from "../tags/Pending";
 
 const tableHeaders: ITableHeaders[] = [
   {
@@ -116,7 +120,15 @@ const Table: React.FC<TableProps> = ({ paginatedPost }) => {
           })}
         </tr>
         {paginatedPost?.map((item: IUser, index: number) => {
-          let { orgName, userName, email, phoneNumber, createdAt, id } = item;
+          let {
+            orgName,
+            userName,
+            email,
+            phoneNumber,
+            createdAt,
+            id,
+            lastActiveDate,
+          } = item;
           let userId: number = Number(id);
           return (
             <tr className="table-data" key={id}>
@@ -127,7 +139,7 @@ const Table: React.FC<TableProps> = ({ paginatedPost }) => {
               <td>{new Date(createdAt).toUTCString()}</td>
               <td>
                 <div className="status">
-                  <p>Status</p>
+                  {lastActiveDate > createdAt ? <Active /> : <Inactive />}
                   <MoreVert
                     className="icon"
                     onClick={() => {
