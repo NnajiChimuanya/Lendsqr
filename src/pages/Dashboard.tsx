@@ -3,16 +3,26 @@ import "../styles/dashboard.scss";
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
 import {
-  DashboardCustomizeOutlined,
   FilterList,
   ChevronLeft,
   ChevronRight,
+  MoreVert,
 } from "@mui/icons-material";
 import ITableHeaders from "../interfaces/tableHeaders";
 import { data } from "../data";
 import IUser from "../interfaces/user";
 import _ from "lodash";
-import { UserTotal, ActiveTotal, LoanTotal, SavingsTotal } from "../svgs";
+import {
+  UserTotal,
+  ActiveTotal,
+  LoanTotal,
+  SavingsTotal,
+  Eye,
+  UserTime,
+  UserCheck,
+} from "../svgs";
+import { Link } from "react-router-dom";
+import Table from "../components/table/Table";
 
 const tableHeaders: ITableHeaders[] = [
   {
@@ -79,6 +89,10 @@ const Dashboard = () => {
     setPaginatedPost(_(data).slice(0).take(pageSize).value());
   }, []);
 
+  const [hide, setHide] = useState<React.SetStateAction<boolean>>(true);
+  const [clicked, setClicked] =
+    useState<React.SetStateAction<number | undefined>>();
+
   return (
     <div className="dashboard">
       <Header />
@@ -125,34 +139,7 @@ const Dashboard = () => {
             </div>
 
             <div className="table-container">
-              <table className="main-table">
-                <tr className="table-header">
-                  {tableHeaders.map((item, id) => {
-                    return (
-                      <th className="table-header" key={id}>
-                        <div>
-                          {item.name}
-                          <FilterList className="filter-icon" />
-                        </div>
-                      </th>
-                    );
-                  })}
-                </tr>
-                {paginatedPost?.map((item, id) => {
-                  let { orgName, userName, email, phoneNumber, createdAt } =
-                    item;
-                  return (
-                    <tr className="table-data">
-                      <td>{orgName}</td>
-                      <td>{userName}</td>
-                      <td>{email}</td>
-                      <td>{phoneNumber}</td>
-                      <td>{createdAt}</td>
-                      <td>{"Active"}</td>
-                    </tr>
-                  );
-                })}
-              </table>
+              <Table paginatedPost={paginatedPost} />
 
               <nav>
                 <ul>

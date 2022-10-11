@@ -8,12 +8,14 @@ import {
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Avatar } from "@mui/material";
+import { Logo } from "../../svgs";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="logo">
-        <img className="logo" src="lendsqrLogo.png" alt="logo" />
+        {/* <img className="logo" src={log} alt="logo" /> */}
+        <Logo className="logo-svg" />
       </div>
       <div className="search-main">
         <div className="search-container">

@@ -1,44 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/userDetails.scss";
 import Header from "../components/header/Header";
 import Sidebar from "../components/sidebar/Sidebar";
 import { KeyboardBackspace, Star } from "@mui/icons-material";
 import { Button, Avatar } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import IUserDetailsRoutes from "../interfaces/userDetailsRoutes";
+import IUser from "../interfaces/user";
+import axios from "axios";
 
-const userDetailsRoutes: IUserDetailsRoutes[] = [
-  {
-    name: "Documents",
-    path: "userDetails/documents",
-  },
-
-  {
-    name: "Bank Details",
-    path: "userDetails/bankDetails",
-  },
-
-  {
-    name: "Loan",
-    path: "userDetails/loans",
-  },
-
-  {
-    name: "Savings",
-    path: "userDetails/savings",
-  },
-  {
-    name: "App and System",
-    path: "userDetails/appAndSystem",
-  },
-];
+type typeId = {
+  id: string;
+};
 
 const UserDetails: React.FC = () => {
+  const [userData, setUserData] = useState<IUser>();
+
+  const { id } = useParams<typeId>();
+
+  useEffect(() => {
+    axios
+      .get(
+        ` https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${id}`
+      )
+      .then((res) => {
+        console.log(res.data);
+        setUserData(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   const [active, setActive] = useState<React.SetStateAction<number>>(0);
 
   const handleLinkClick = (id: number) => {
     setActive(id);
   };
+
+  const userDetailsRoutes: IUserDetailsRoutes[] = [
+    {
+      name: "Documents",
+      path: `userDetails/documents`,
+    },
+
+    {
+      name: "Bank Details",
+      path: "userDetails/bankDetails",
+    },
+
+    {
+      name: "Loan",
+      path: "userDetails/loans",
+    },
+
+    {
+      name: "Savings",
+      path: "userDetails/savings",
+    },
+    {
+      name: "App and System",
+      path: "userDetails/appAndSystem",
+    },
+  ];
 
   return (
     <div className="userDetails-page">
@@ -67,10 +89,13 @@ const UserDetails: React.FC = () => {
           <div className="section-1">
             <div className="up">
               <div className="user">
-                <Avatar className="avatar" />
+                <Avatar
+                  src={`${userData?.profile.avatar}`}
+                  className="avatar"
+                />
                 <div className="name">
-                  <h3>Grace Effiom</h3>
-                  <p>LSQFf587g90</p>
+                  <h3>{userData?.userName}</h3>
+                  <p>{userData?.accountNumber}</p>
                 </div>
               </div>
 
@@ -80,8 +105,8 @@ const UserDetails: React.FC = () => {
               </div>
 
               <div className="user-balance">
-                <h2>N 200,000.00</h2>
-                <p>9912345678/Providus Bank</p>
+                <h2>{`₦ ${userData?.accountBalance}`}</h2>
+                <p>{userData?.accountNumber}</p>
               </div>
             </div>
 
@@ -116,27 +141,27 @@ const UserDetails: React.FC = () => {
               <div className="details">
                 <div>
                   <p>FULL NAME</p>
-                  <h4>Grace Effiom</h4>
+                  <h4>{`${userData?.profile.firstName} ${userData?.profile.lastName}`}</h4>
                 </div>
 
                 <div>
                   <p>Phone number</p>
-                  <h4>0706789878</h4>
+                  <h4>{userData?.phoneNumber}</h4>
                 </div>
 
                 <div>
                   <p>Email Address</p>
-                  <h4>grace@gmail.com</h4>
+                  <h4>{userData?.email}</h4>
                 </div>
 
                 <div>
                   <p>Bvn</p>
-                  <h4>123456789</h4>
+                  <h4>{userData?.profile.bvn}</h4>
                 </div>
 
                 <div>
                   <p>Gender</p>
-                  <h4>Female</h4>
+                  <h4>{userData?.profile.gender}</h4>
                 </div>
 
                 <div>
@@ -163,32 +188,32 @@ const UserDetails: React.FC = () => {
               <div className="details">
                 <div>
                   <p>level of Education</p>
-                  <h4>B.Sc</h4>
+                  <h4>{userData?.education.level}</h4>
                 </div>
 
                 <div>
                   <p>Employment status</p>
-                  <h4>Employed</h4>
+                  <h4>{userData?.education.employmentStatus}</h4>
                 </div>
 
                 <div>
                   <p>Sector of Employment</p>
-                  <h4>FinTech</h4>
+                  <h4>{userData?.education.sector}</h4>
                 </div>
 
                 <div>
                   <p>Duration of Employment</p>
-                  <h4>2 years</h4>
+                  <h4>{userData?.education.duration}</h4>
                 </div>
 
                 <div>
                   <p>Office Email</p>
-                  <h4>grace@lendsqr.com</h4>
+                  <h4>{userData?.education.officeEmail}</h4>
                 </div>
 
                 <div>
                   <p>Monthly income</p>
-                  <h4>₦200,000.00- ₦400,000.00</h4>
+                  <h4>{`₦${userData?.education.monthlyIncome[0]} - ₦${userData?.education.monthlyIncome[1]}`}</h4>
                 </div>
 
                 <div>
@@ -198,7 +223,7 @@ const UserDetails: React.FC = () => {
 
                 <div>
                   <p>loan repayment</p>
-                  <h4>40,000</h4>
+                  <h4>{`₦ ${userData?.education.loanRepayment}`}</h4>
                 </div>
               </div>
             </div>
@@ -210,17 +235,17 @@ const UserDetails: React.FC = () => {
               <div className="details">
                 <div>
                   <p>Twitter</p>
-                  <h4>@graceEffion</h4>
+                  <h4>{userData?.socials.twitter}</h4>
                 </div>
 
                 <div>
                   <p>Facebook</p>
-                  <h4>Grace Effiom</h4>
+                  <h4>{userData?.socials.facebook}</h4>
                 </div>
 
                 <div>
                   <p>Instagram</p>
-                  <h4>@graceEffion</h4>
+                  <h4>{userData?.socials.facebook}</h4>
                 </div>
               </div>
             </div>
@@ -232,17 +257,17 @@ const UserDetails: React.FC = () => {
               <div className="details">
                 <div>
                   <p>Full name</p>
-                  <h4>Debby Ogana</h4>
+                  <h4>{`${userData?.guarantor.firstName} ${userData?.guarantor.lastName}`}</h4>
                 </div>
 
                 <div>
                   <p>phone number</p>
-                  <h4>07060780922</h4>
+                  <h4>{userData?.guarantor.phoneNumber}</h4>
                 </div>
 
                 <div>
-                  <p>Email address</p>
-                  <h4>debby@gmail.com</h4>
+                  <p> address</p>
+                  <h4>{userData?.guarantor.address}</h4>
                 </div>
 
                 <div>
@@ -258,12 +283,12 @@ const UserDetails: React.FC = () => {
               <div className="details">
                 <div>
                   <p>Full name</p>
-                  <h4>Debby Ogana</h4>
+                  <h4>{`${userData?.guarantor.firstName} ${userData?.guarantor.lastName}`}</h4>
                 </div>
 
                 <div>
                   <p>phone number</p>
-                  <h4>07060780922</h4>
+                  <h4>{userData?.guarantor.phoneNumber}</h4>
                 </div>
 
                 <div>

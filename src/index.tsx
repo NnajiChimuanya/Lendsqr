@@ -17,7 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/userDetails" element={<UserDetails />}>
+        <Route path="/userDetails/:id" element={<UserDetails />}>
           <Route path="userDetails/documents" element={<UserDetails />} />
           <Route path="userDetails/bankDetails" element={<UserDetails />} />
           <Route path="userDetails/loans" element={<UserDetails />} />
