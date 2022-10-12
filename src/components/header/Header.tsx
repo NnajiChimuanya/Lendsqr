@@ -14,7 +14,6 @@ import { LendsqrContext } from "../../context/Context";
 const Header = () => {
   const { state, dispatch } = useContext(LendsqrContext);
   const { showSidebar } = state;
-  console.log(showSidebar);
 
   return (
     <div className="header">

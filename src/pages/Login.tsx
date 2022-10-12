@@ -6,8 +6,6 @@ import { LendsqrContext } from "../context/Context";
 const Login = () => {
   const { state, dispatch } = useContext(LendsqrContext);
 
-  console.log(state);
-
   const [showPassword, setShowPassword] =
     useState<React.SetStateAction<boolean>>(false);
   const [email, setEmail] = useState<string | number>("");

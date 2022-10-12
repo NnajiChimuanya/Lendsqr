@@ -59,8 +59,9 @@ const Dashboard: React.FC = () => {
     axios
       .get("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
       .then((res) => {
-        console.log(res.data);
-        setData(res.data);
+        // saving data to local storage
+        localStorage.setItem("data", JSON.stringify(res.data));
+        setData(JSON.parse(localStorage?.data));
       })
       .catch((err) => console.log(err));
   }, []);

@@ -10,6 +10,12 @@
 
 1. Karma Verification : Discover and block bad actors using data from Karma. Use common data points, such as emails, phone, BVN, and even images to discover potential borrowers or customers who have been previously flagged for fraud and other unethical behaviours.4
 
+2. Blacklist a user
+
+3. Activated a user
+
+4. View list of registered users and thier details
+
 # Folder structure
 
     src\
