@@ -284,6 +284,11 @@
 
           h4 {
             font-family: $sfCompact;
+            font-size: $smallSize;
+
+            @media screen and (min-width: 600px) {
+              font-size: $mediumSize;
+            }
           }
 
           .details {
@@ -351,6 +356,13 @@
             font : {
               font-family: $sfCompact;
             }
+
+            font-family: $sfCompact;
+            font-size: $smallSize;
+
+            @media screen and (min-width: 600px) {
+              font-size: $mediumSize;
+            }
           }
 
           .details {
@@ -412,6 +424,13 @@
           h4 {
             font : {
               font-family: $sfCompact;
+            }
+
+            font-family: $sfCompact;
+            font-size: $smallSize;
+
+            @media screen and (min-width: 600px) {
+              font-size: $mediumSize;
             }
           }
 
@@ -475,6 +494,13 @@
             font : {
               font-family: $sfCompact;
             }
+
+            font-family: $sfCompact;
+            font-size: $smallSize;
+
+            @media screen and (min-width: 600px) {
+              font-size: $mediumSize;
+            }
           }
 
           .details {
@@ -532,6 +558,15 @@
 
         .user-overall {
           margin: 0 25px 0px 25px;
+
+          h4 {
+            font-family: $sfCompact;
+            font-size: $smallSize;
+
+            @media screen and (min-width: 600px) {
+              font-size: $mediumSize;
+            }
+          }
 
           .details {
             display: grid;

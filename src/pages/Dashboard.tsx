@@ -106,7 +106,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="dashboard">
+    <div data-testid="dashboard" className="dashboard">
       <Header />
       <div className="main">
         <Sidebar />

@@ -24,7 +24,6 @@ const UserDetails: React.FC = () => {
         ` https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${id}`
       )
       .then((res) => {
-        console.log(res.data);
         setUserData(res.data);
       })
       .catch((err) => console.log(err));

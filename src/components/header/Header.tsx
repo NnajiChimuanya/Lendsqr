@@ -16,7 +16,7 @@ const Header = () => {
   const { showSidebar } = state;
 
   return (
-    <div className="header">
+    <div data-testid="header" className="header">
       <div className="logo">
         {/* <img className="logo" src={log} alt="logo" /> */}
         <Logo className="logo-svg" />

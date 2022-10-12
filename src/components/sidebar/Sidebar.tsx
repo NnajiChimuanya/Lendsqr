@@ -175,7 +175,10 @@ const Sidebar: React.FC = () => {
     setActive(id);
   };
   return (
-    <div className={`sidebar  ${showSidebar ? "showSideBar" : "hideSideBar"}`}>
+    <div
+      data-testid="sidebar"
+      className={`sidebar  ${showSidebar ? "showSideBar" : "hideSideBar"}`}
+    >
       <div className="switch-organization">
         <Briefcase />
         <p className="main-item-name"> Switch Organization</p>
