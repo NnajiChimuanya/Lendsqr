@@ -1,7 +1,11 @@
 import React from "react";
 
 const Blacklist = () => {
-  return <div className="blacklist">Blacklist</div>;
+  return (
+    <div data-testid="test-blacklist" className="blacklist">
+      Blacklist
+    </div>
+  );
 };
 
 export default Blacklist;

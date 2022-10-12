@@ -1,7 +1,11 @@
 import React from "react";
 
 const Pending = () => {
-  return <div className="pending">Pending</div>;
+  return (
+    <div data-testid="test-pending" className="pending">
+      Pending
+    </div>
+  );
 };
 
 export default Pending;
