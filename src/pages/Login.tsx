@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/login.scss";
 import { Link, useNavigate } from "react-router-dom";
+import { LendsqrContext } from "../context/Context";
 
 const Login = () => {
+  const { state, dispatch } = useContext(LendsqrContext);
+
+  console.log(state);
+
   const [showPassword, setShowPassword] =
     useState<React.SetStateAction<boolean>>(false);
   const [email, setEmail] = useState<string | number>("");
@@ -59,7 +64,13 @@ const Login = () => {
             </Link>
           </p>
 
-          <button onClick={() => navigate("/")} className="button">
+          <button
+            onClick={() => {
+              dispatch({ type: "SET_LOGIN", payload: true });
+              // navigate("/");
+            }}
+            className="button"
+          >
             LOG IN
           </button>
         </form>

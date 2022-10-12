@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./header.scss";
 import {
   SearchOutlined,
@@ -9,8 +9,13 @@ import {
 import { Link } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import { Logo } from "../../svgs";
+import { LendsqrContext } from "../../context/Context";
 
 const Header = () => {
+  const { state, dispatch } = useContext(LendsqrContext);
+  const { showSidebar } = state;
+  console.log(showSidebar);
+
   return (
     <div className="header">
       <div className="logo">
@@ -49,7 +54,12 @@ const Header = () => {
         </div>
       </div>
       <div className="toggle-container">
-        <DensityMedium className="toggle-icon" />
+        <DensityMedium
+          onClick={() => {
+            dispatch({ type: "SET_SHOW_SIDEBAR", payload: !showSidebar });
+          }}
+          className="toggle-icon"
+        />
       </div>
     </div>
   );

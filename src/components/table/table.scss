@@ -112,9 +112,7 @@ div {
         outline-width: 0px;
 
         option {
-          &::placeholder {
-            color: $primary;
-          }
+          color: $primary;
         }
       }
     }

@@ -115,3 +115,20 @@
     display: block;
   }
 }
+
+.showSideBar {
+  width: 283px;
+  height: 90vh;
+  overflow-y: scroll;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  font-family: $sfCompact;
+  color: $primary;
+  display: block;
+  z-index: 10000;
+  top: 20px;
+  background-color: #fff;
+}
+
+.hidesideBar {
+  display: none;
+}

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./sidebar.scss";
-import { ArrowDropDown, Dashboard } from "@mui/icons-material";
+import { ArrowDropDown } from "@mui/icons-material";
 import SubMenu from "./SubMenu";
 import ISidebarData from "../../interfaces/sideBarDataInterface";
-// import { ReactComponent as badgePercent } from "../../svgs/badge-percent.svg";
 import {
   badgePercent,
   Briefcase,
@@ -27,6 +26,7 @@ import {
   Signout,
 } from "../../svgs";
 import { Link } from "react-router-dom";
+import { LendsqrContext } from "../../context/Context";
 
 const sidebarData: ISidebarData[] = [
   {
@@ -167,12 +167,15 @@ const sidebarData: ISidebarData[] = [
 ];
 
 const Sidebar: React.FC = () => {
+  const { state, dispatch } = useContext(LendsqrContext);
+  const { showSidebar } = state;
+
   const [active, setActive] = useState<React.SetStateAction<string>>("8767");
   const handleLinkClick = (id: string) => {
     setActive(id);
   };
   return (
-    <div className="sidebar">
+    <div className={`sidebar  ${showSidebar ? "showSideBar" : "hideSideBar"}`}>
       <div className="switch-organization">
         <Briefcase />
         <p className="main-item-name"> Switch Organization</p>
