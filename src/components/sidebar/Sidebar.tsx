@@ -168,7 +168,7 @@ const sidebarData: ISidebarData[] = [
 
 const Sidebar: React.FC = () => {
   const { state, dispatch } = useContext(LendsqrContext);
-  const { showSidebar } = state;
+  const { showSidebar, loggedIn } = state;
 
   const [active, setActive] = useState<React.SetStateAction<string>>("8767");
   const handleLinkClick = (id: string) => {
@@ -216,7 +216,15 @@ const Sidebar: React.FC = () => {
 
       <div className="logout">
         <Signout />
-        <p className="main-item-name"> Logout</p>
+        <p
+          onClick={() => {
+            dispatch({ type: "SET_LOGIN", payload: false });
+          }}
+          className="main-item-name"
+        >
+          {" "}
+          Logout
+        </p>
       </div>
     </div>
   );

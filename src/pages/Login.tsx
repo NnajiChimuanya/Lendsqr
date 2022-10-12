@@ -67,7 +67,6 @@ const Login = () => {
           <button
             onClick={() => {
               dispatch({ type: "SET_LOGIN", payload: true });
-              // navigate("/");
             }}
             className="button"
           >

@@ -10,6 +10,7 @@ import Active from "../tags/Active";
 import Inactive from "../tags/Inactive";
 import Blacklist from "../tags/Blacklist";
 import Pending from "../tags/Pending";
+import { size } from "lodash";
 
 const tableHeaders: ITableHeaders[] = [
   {
@@ -139,7 +140,15 @@ const Table: React.FC<TableProps> = ({ paginatedPost }) => {
               <td>{new Date(createdAt).toUTCString()}</td>
               <td>
                 <div className="status">
-                  {lastActiveDate > createdAt ? <Active /> : <Inactive />}
+                  {Number(id) % 2 == 0 ? (
+                    <Active />
+                  ) : Number(id) % 3 == 0 ? (
+                    <Pending />
+                  ) : Number(id) % 10 == 0 ? (
+                    <Inactive />
+                  ) : (
+                    <Blacklist />
+                  )}
                   <MoreVert
                     className="icon"
                     onClick={() => {

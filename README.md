@@ -1,6 +1,4 @@
-<img src="https://www.lendsqr.com/assets/icons/header-logo.svg" alt="logo>
-
-# Lendsqr
+# About Lendsqr
 
 ### A Lending-as-a-Service Solution which powers lenders to build, launch, and scale their digital lending business across multiple channels, at the lowest cost.
 
@@ -21,6 +19,7 @@
         pages\            -> contains the different pages
         styles\           -> contains all styles
         svgs\             -> contains all the svg components used
+        context\          -> contains the implementation of the global state and the reducer function
 
 # Getting Started with Lendsqr app
 
@@ -39,3 +38,7 @@ Nodejs Version 10 or higher
 ## To start project in development mode :
 
 ### `npm start`
+
+## To run tests :
+
+### `npm run text`
